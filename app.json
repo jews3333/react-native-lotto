@@ -26,6 +26,8 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": "com.reactnative.lotto"
+    "android": {
+      "package": "com.reactnative.lotto"
+    }
   }
 }
