@@ -1,19 +1,23 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import Loading from './components/Loading';
+import LottoComponent from './components/LottoComponent';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>시작해볼까</Text>
-    </View>
-  );
+export default class App extends Component {
+  state = {
+    loaded: false
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({
+        loaded: true
+      })
+    }, 3000);
+  }
+
+  render(){
+    return (
+      this.state.loaded ? <LottoComponent/> : <Loading/>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
